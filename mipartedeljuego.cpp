@@ -1,3 +1,61 @@
+//primer avance 
+#include <iostream>
+#include <fstream>
+#include <ctime>
+#include <string>
+using namespace std;
+
+string eleccionUsuario(int jugadorNum);
+string eleccionComputadora();
+void mostrareleccion(string eleccion);
+void elegirGanador(string jugador1, string jugador2, ofstream &archivo);
+void jugar1vs1(ofstream &archivo);
+
+
+int main() {
+    int opcion;
+    bool continuar = true;
+    ofstream archivo("resultados.txt", ios::app);
+
+    while (continuar) {
+        cout << "=================================\n";
+        cout << "Bienvenido a piedra, papel o tijera\n";
+        cout << "=================================\n";
+        cout << "Selecciona una de las opciones:\n";
+        cout << "1. Jugar 1 vs 1\n";
+        cout << "2. Jugar contra la computadora\n";
+        cout << "3. Salir\n";
+        cin >> opcion;
+
+        switch (opcion) {
+            case 1:
+                jugar1vs1(archivo);
+                break;
+            case 2: {
+                string jugador;
+                string computadora;
+                jugador = eleccionUsuario(1);
+                cout << "Jugador: ";
+                mostrareleccion(jugador);
+
+                computadora = eleccionComputadora();
+                cout << "Computadora: ";
+                mostrareleccion(computadora);
+
+                elegirGanador(jugador, computadora, archivo);
+                break;
+            }
+            case 3:
+                continuar = false;
+                break;
+            default:
+                cout << "Opción no válida, intenta de nuevo.\n";
+        }
+    }
+
+    archivo.close();
+    return 0;
+}
 // avance1 
 string eleccionUsuario(int jugadorNum) {
     string jugador;
@@ -68,6 +126,6 @@ void elegirGanador(string jugador1, string jugador2, ofstream &archivo) {
     }
     // avance5 
   // Registrar el resultado en el archivo
-    archivo << "Jugador 1: " << jugador1 << ", Jugador 2: " << jugador2 << " => " << resultado << endl;
+    archivo << "Jugador 1: " << jugador1 << ", Jugador 2: " << jugador2 << " => " << resultado<<endl;
 }
 
