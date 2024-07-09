@@ -1,0 +1,1 @@
+Jugador 1: p, Jugador 2: pa => Jugador 2 GANA!!
