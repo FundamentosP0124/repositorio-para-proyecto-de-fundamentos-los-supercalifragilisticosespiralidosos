@@ -66,5 +66,8 @@ void elegirGanador(string jugador1, string jugador2, ofstream &archivo) {
         resultado = "Jugador 2 GANA!!";
         cout << "Jugador 2 GANA!!\n";
     }
-
+    // avance5 
+  // Registrar el resultado en el archivo
+    archivo << "Jugador 1: " << jugador1 << ", Jugador 2: " << jugador2 << " => " << resultado << endl;
+}
 
