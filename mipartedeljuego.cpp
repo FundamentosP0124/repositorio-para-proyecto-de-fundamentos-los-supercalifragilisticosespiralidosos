@@ -32,4 +32,25 @@ void mostrareleccion(string eleccion) {
     } else if (eleccion == "t") {
         cout << "tijera\n";
     }
- 
+ // avance 3
+ }
+
+void jugar1vs1(ofstream &archivo) {
+    string jugador1, jugador2;
+
+    cout << "Jugador 1:\n";
+    jugador1 = eleccionUsuario(1);
+    cout << "Jugador 1 eligio: ";
+    mostrareleccion(jugador1);
+
+    cout << "Jugador 2:\n";
+    jugador2 = eleccionUsuario(2);
+    cout << "Jugador 2 eligio: ";
+    mostrareleccion(jugador2);
+
+    elegirGanador(jugador1, jugador2, archivo);
+}
+
+void elegirGanador(string jugador1, string jugador2, ofstream &archivo) {
+    string resultado;
+
