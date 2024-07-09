@@ -13,3 +13,23 @@ string eleccionUsuario(int jugadorNum) {
     } while (jugador != "p" && jugador != "pa" && jugador != "t");
     return jugador;
 }
+// avance 2
+string eleccionComputadora() {
+    srand(time(0));
+    int num = rand() % 3 + 1;
+    switch (num) {
+        case 1: return "p";
+        case 2: return "pa";
+        case 3: return "t";
+    }
+    return "";
+}
+void mostrareleccion(string eleccion) {
+    if (eleccion == "p") {
+        cout << "piedra\n";
+    } else if (eleccion == "pa") {
+        cout << "papel\n";
+    } else if (eleccion == "t") {
+        cout << "tijera\n";
+    }
+ 
