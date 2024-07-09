@@ -53,4 +53,18 @@ void jugar1vs1(ofstream &archivo) {
 
 void elegirGanador(string jugador1, string jugador2, ofstream &archivo) {
     string resultado;
+    // avance 4 
+     if (jugador1 == jugador2) {
+        resultado = "EMPATE";
+        cout << "EMPATE\n";
+    } else if ((jugador1 == "p" && jugador2 == "t") 
+               || (jugador1 == "pa" && jugador2 == "p") 
+               || (jugador1 == "t" && jugador2 == "pa")) {
+        resultado = "Jugador 1 GANA!!";
+        cout << "Jugador 1 GANA!!\n";
+    } else {
+        resultado = "Jugador 2 GANA!!";
+        cout << "Jugador 2 GANA!!\n";
+    }
+
 
